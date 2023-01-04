@@ -4,7 +4,7 @@
 
 <footer
 	id="contact"
-	class="bg-slate-50 text-slate-900 w-full font-semibold flex md:justify-center"
+	class="bg-slate-50 text-p w-full font-semibold flex md:justify-center"
 >
 	<ul class="p-4 md:w-[768px] flex flex-col gap-2">
 		<li>

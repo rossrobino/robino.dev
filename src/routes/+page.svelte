@@ -9,7 +9,7 @@
 </script>
 
 <div
-	class="min-w-[280px] md:flex md:justify-center bg-slate-900 bg-[url('/images/background.webp')]"
+	class="min-w-[280px] md:flex md:justify-center bg-p bg-[url('/images/background.webp')]"
 >
 	<div class="flex flex-col min-h-[100dvh] w-full items-center">
 		<Header />

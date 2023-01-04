@@ -8,7 +8,7 @@
 {#if repos.length}
 	<section
 		id="portfolio"
-		class="bg-slate-50 text-slate-900 md:rounded-sm p-4"
+		class="bg-slate-50 text-p md:rounded-sm p-4"
 	>
 		<h2>Portfolio</h2>
 		<div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
