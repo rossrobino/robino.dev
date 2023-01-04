@@ -2,7 +2,7 @@
 	import ExternalLink from "../ExternalLink.svelte";
 </script>
 
-<section id="skills" class="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 md:my-8">
+<section id="skills" class="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 md:my-4">
 	<div>
 		<h2>Languages</h2>
 		<ul class="list-disc ml-8 mt-2 flex flex-col gap-2">

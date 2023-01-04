@@ -1,8 +1,7 @@
-export const prerender = true;
-
 export async function load({ fetch }) {
 	const res = await fetch("https://api.github.com/users/rossrobino/repos");
-	const repos = await res.json();
+	let repos = await res.json();
+	repos.sort((a, b) => new Date(b.pushed_at) - new Date(a.pushed_at));
 	return {
 		repos: repos.map((repo) => ({
 			name: repo.name,
