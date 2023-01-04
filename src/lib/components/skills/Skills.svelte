@@ -5,7 +5,7 @@
 <section id="skills" class="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 md:my-4">
 	<div>
 		<h2>Languages</h2>
-		<ul class="list-disc ml-8 mt-2 flex flex-col gap-2">
+		<ul class="list-disc ml-6 mt-2 flex flex-col gap-2">
 			<li>HTML</li>
 			<li>CSS</li>
 			<li>JavaScript</li>
@@ -15,7 +15,7 @@
 	</div>
 	<div>
 		<h2>Tooling</h2>
-		<ul class="list-disc ml-8 mt-2 flex flex-col gap-2">
+		<ul class="list-disc ml-6 mt-2 flex flex-col gap-2">
 			<li>
 				<ExternalLink href="https://svelte.dev/">Svelte</ExternalLink>
 			</li>

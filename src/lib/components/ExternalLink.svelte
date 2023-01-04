@@ -11,7 +11,7 @@
 	export let icon = "link";
 </script>
 
-<a {href} rel="external" class="flex gap-2 w-fit pr-8 hover:pr-2 group {className}">
+<a {href} rel="external" class="flex gap-1.5 w-fit pr-8 hover:pr-2 group {className}">
 	<slot />
 	{#if icon}
 		<span class="hidden group-hover:flex items-center">
