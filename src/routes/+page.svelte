@@ -6,7 +6,6 @@
 	import Footer from "$lib/components/Footer.svelte";
 
 	export let data;
-	console.log(data);
 </script>
 
 <div

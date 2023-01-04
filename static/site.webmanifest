@@ -1,6 +1,6 @@
 {
-	"name": "",
-	"short_name": "",
+	"name": "Ross Robino",
+	"short_name": "Robino",
 	"icons": [
 		{
 			"src": "android-chrome-192x192.png",
@@ -15,5 +15,5 @@
 	],
 	"theme_color": "#f8fafc",
 	"background_color": "#f8fafc",
-	"display": "standalone"
+	"display": "browser"
 }

@@ -8,10 +8,14 @@
 		@apply scroll-smooth;
 	}
 	body {
-		@apply text-slate-50 font-sans selection:bg-emerald-500;
+		@apply text-slate-50 font-sans selection:bg-emerald-500 selection:text-slate-50;
 	}
 	h1 {
-		@apply font-bold text-4xl;
+		@apply font-bold text-3xl;
+	}
+	h2,
+	h3 {
+		@apply tracking-wide;
 	}
 	h2 {
 		@apply font-bold text-2xl;
@@ -19,13 +23,13 @@
 	h3 {
 		@apply font-bold text-xl;
 	}
-	h3 a {
-		@apply decoration-emerald-500;
-	}
 	p {
 		@apply pt-4;
 	}
 	a {
 		@apply font-semibold underline underline-offset-4 decoration-indigo-500 hover:decoration-slate-500;
+	}
+	section {
+		@apply scroll-mt-24;
 	}
 }

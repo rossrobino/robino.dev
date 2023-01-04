@@ -2,9 +2,9 @@
 	import ProfilePicture from "./ProfilePicture.svelte";
 </script>
 
-<section id="about" class="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 my-4">
+<section id="about" class="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 md:my-8">
 	<div class="order-last md:order-first flex flex-col justify-center">
-		<h2>Welcome to my personal website</h2>
+		<h2 class="text-emerald-500">Welcome to my personal website</h2>
 		<p>
 			I live in the Pacific Northwest with my wife Keely and my dog Riley.
 			I work as a Business Innovation Analyst at PepsiCo. Some of my

@@ -7,7 +7,7 @@ const config = {
 				p: "#0E1317",
 			},
 			fontFamily: {
-				mans: ["Mansalva"],
+				mans: ["Mansalva", "sans-serif"],
 			},
 		},
 	},
