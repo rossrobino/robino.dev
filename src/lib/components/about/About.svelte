@@ -11,7 +11,8 @@
 			hobbies are skiing, running, and playing guitar.
 		</p>
 		<p>
-			Feel free to check out my web development work or contact me using the links below.
+			Feel free to check out my web development projects or contact me
+			using the links below.
 		</p>
 	</div>
 	<ProfilePicture />
