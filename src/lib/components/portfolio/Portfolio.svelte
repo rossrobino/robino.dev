@@ -27,12 +27,9 @@
 						</div>
 					{/if}
 					<div>
-						<a href={repo.html_url} class="flex gap-2 group">
+						<ExternalLink href={repo.html_url} icon="book">
 							{repo.full_name}
-							<span class="hidden group-hover:flex items-center">
-								<Book />
-							</span>
-						</a>
+						</ExternalLink>
 					</div>
 				</div>
 			{/each}

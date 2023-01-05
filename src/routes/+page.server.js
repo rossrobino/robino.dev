@@ -1,7 +1,9 @@
 export async function load({ fetch }) {
 	const res = await fetch("https://api.github.com/users/rossrobino/repos");
-	let repos = await res.json();
+	const repos = await res.json();
+	// sort by pushed_at date, most recent first
 	repos.sort((a, b) => new Date(b.pushed_at) - new Date(a.pushed_at));
+	// creates a new array with just the data points needed for the page
 	return {
 		repos: repos.map((repo) => ({
 			name: repo.name,
