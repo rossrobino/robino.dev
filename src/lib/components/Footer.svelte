@@ -25,5 +25,8 @@
 				LinkedIn
 			</ExternalLink>
 		</li>
+		<li>
+			<ExternalLink share href="https://robino.dev" />
+		</li>
 	</ul>
 </footer>
