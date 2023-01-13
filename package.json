@@ -9,7 +9,7 @@
 		"lint": "eslint ."
 	},
 	"devDependencies": {
-		"@rossrobino/components": "^1.0.6",
+		"@rossrobino/components": "^1.1.0",
 		"@sveltejs/adapter-vercel": "next",
 		"@sveltejs/kit": "^1.0.11",
 		"autoprefixer": "^10.4.13",
