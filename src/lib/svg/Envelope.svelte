@@ -4,6 +4,7 @@
 	fill="currentColor"
 	class="w-4 h-4"
 >
+	<title>mail</title>
 	<path
 		d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z"
 	/>

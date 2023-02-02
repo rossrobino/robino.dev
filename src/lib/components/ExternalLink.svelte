@@ -17,17 +17,21 @@
 	>
 		<slot />
 		{#if icon}
-			<Icon {icon} />
+			<span class="hidden group-hover:flex items-center">
+				<Icon {icon} />
+			</span>
 		{/if}
 	</a>
 {:else}
-	<div class="flex gap-1.5 w-fit pr-8 hover:pr-2 group {className}">
+	<div class="flex gap-1.5 w-fit pr-8 hover:pr-2 group hover:cursor-pointer {className}">
 		<ShareButton
 			url={href}
 			class="font-semibold underline underline-offset-4 decoration-indigo-500 hover:decoration-slate-500"
 		/>
 		{#if icon}
-			<Icon icon="share" />
+			<span class="hidden group-hover:flex items-center">
+				<Icon icon="share" />
+			</span>
 		{/if}
 	</div>
 {/if}

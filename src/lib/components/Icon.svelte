@@ -9,18 +9,16 @@
 	export let icon = "link";
 </script>
 
-<span class="hidden group-hover:flex items-center">
-	{#if icon === "link"}
-		<Link />
-	{:else if icon === "book"}
-		<Book />
-	{:else if icon == "envelope"}
-		<Envelope />
-	{:else if icon == "person"}
-		<Person />
-	{:else if icon == "home"}
-		<Home />
-	{:else if icon == "share"}
-		<Share />
-	{/if}
-</span>
+{#if icon === "link"}
+	<Link />
+{:else if icon === "book"}
+	<Book />
+{:else if icon == "envelope"}
+	<Envelope />
+{:else if icon == "person"}
+	<Person />
+{:else if icon == "home"}
+	<Home />
+{:else if icon == "share"}
+	<Share />
+{/if}
