@@ -6,7 +6,6 @@
 	<div class="order-last md:order-first flex flex-col justify-center">
 		<h2 class="text-emerald-500">Welcome to my personal website</h2>
 		<p>
-			I live in the Pacific Northwest with my wife Keely and my dog Riley.
 			I work as a Business Innovation Analyst at PepsiCo. Some of my
 			hobbies are skiing, running, and playing guitar.
 		</p>

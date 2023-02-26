@@ -6,11 +6,11 @@
 	<div>
 		<h2>Languages</h2>
 		<ul class="list-disc ml-6 mt-2 flex flex-col gap-2">
+			<li>JavaScript</li>
+			<li>TypeScript</li>
 			<li>HTML</li>
 			<li>CSS</li>
-			<li>JavaScript</li>
 			<li>Python</li>
-			<li>SQL</li>
 		</ul>
 	</div>
 	<div>
