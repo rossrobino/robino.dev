@@ -13,7 +13,10 @@
 					class="bg-p text-slate-50 rounded-sm p-4 flex flex-col gap-1"
 				>
 					<h3>
-						<ExternalLink href={homepage} icon="home">
+						<ExternalLink
+							href={homepage ? homepage : html_url}
+							icon="home"
+						>
 							{name}
 						</ExternalLink>
 					</h3>
