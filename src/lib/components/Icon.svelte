@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import Link from "$lib/svg/Link.svelte";
 	import Book from "$lib/svg/Book.svelte";
 	import Envelope from "$lib/svg/Envelope.svelte";
