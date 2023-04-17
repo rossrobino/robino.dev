@@ -3,7 +3,10 @@
 </script>
 
 <svelte:head>
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-VTNMKYJH7T"></script>
+	<script
+		async
+		src="https://www.googletagmanager.com/gtag/js?id=G-VTNMKYJH7T"
+	></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
 		function gtag() {

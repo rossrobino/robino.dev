@@ -8,7 +8,9 @@
 	export let data;
 </script>
 
-<div class="min-w-[280px] bg-p bg-[url('/images/background.webp')] md:flex md:justify-center">
+<div
+	class="min-w-[280px] bg-p bg-[url('/images/background.webp')] md:flex md:justify-center"
+>
 	<div class="flex min-h-[100dvh] w-full flex-col items-center">
 		<Header />
 		<main class="flex-1 md:w-[768px]">

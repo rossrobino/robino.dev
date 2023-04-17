@@ -5,7 +5,9 @@ export const load = async ({ fetch }) => {
 
 	// sort by created_at date, most recent first
 	repos.sort(
-		(a, b) => new Date(String(b.created_at)).valueOf() - new Date(String(a.created_at)).valueOf()
+		(a, b) =>
+			new Date(String(b.created_at)).valueOf() -
+			new Date(String(a.created_at)).valueOf(),
 	);
 
 	// filter out forks

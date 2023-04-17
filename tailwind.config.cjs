@@ -4,12 +4,12 @@ module.exports = {
 	theme: {
 		extend: {
 			colors: {
-				p: "#0E1317"
+				p: "#0E1317",
 			},
 			fontFamily: {
-				mans: ["Mansalva", "sans-serif"]
-			}
-		}
+				mans: ["Mansalva", "sans-serif"],
+			},
+		},
 	},
-	plugins: []
+	plugins: [],
 };

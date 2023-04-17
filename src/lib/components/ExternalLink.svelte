@@ -10,7 +10,11 @@
 </script>
 
 {#if !share}
-	<a {href} rel="external" class="group flex w-fit gap-1.5 pr-8 hover:pr-2 {className}">
+	<a
+		{href}
+		rel="external"
+		class="group flex w-fit gap-1.5 pr-8 hover:pr-2 {className}"
+	>
 		<slot />
 		{#if icon}
 			<span class="hidden items-center group-hover:flex">
@@ -19,7 +23,9 @@
 		{/if}
 	</a>
 {:else}
-	<div class="group flex w-fit gap-1.5 pr-8 hover:cursor-pointer hover:pr-2 {className}">
+	<div
+		class="group flex w-fit gap-1.5 pr-8 hover:cursor-pointer hover:pr-2 {className}"
+	>
 		<ShareButton
 			url={href}
 			class="font-semibold underline decoration-indigo-500 underline-offset-4 hover:decoration-slate-500"

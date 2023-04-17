@@ -3,7 +3,7 @@
 		{ text: "About", link: "#about" },
 		{ text: "Portfolio", link: "#portfolio" },
 		{ text: "Skills", link: "#skills" },
-		{ text: "Contact", link: "#contact" }
+		{ text: "Contact", link: "#contact" },
 	];
 </script>
 
