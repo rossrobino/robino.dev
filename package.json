@@ -9,7 +9,9 @@
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "prettier --plugin-search-dir . --check . && eslint .",
-		"format": "prettier --plugin-search-dir . --write ."
+		"format": "prettier --plugin-search-dir . --write .",
+		"migrate": "drizzle-kit generate:pg",
+		"drop": "drizzle-kit drop"
 	},
 	"devDependencies": {
 		"@octokit/types": "^9.2.0",
@@ -36,6 +38,9 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@vercel/analytics": "^1.0.0"
+		"@vercel/analytics": "^1.0.0",
+		"@vercel/postgres": "^0.1.2",
+		"drizzle-kit": "^0.17.6",
+		"drizzle-orm": "^0.25.4"
 	}
 }

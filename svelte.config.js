@@ -5,7 +5,7 @@ import { vitePreprocess } from "@sveltejs/kit/vite";
 const config = {
 	preprocess: vitePreprocess(),
 	kit: {
-		adapter: adapter({ runtime: "edge" }),
+		adapter: adapter({ runtime: "edge", regions: ["iad1"] }),
 	},
 };
 
