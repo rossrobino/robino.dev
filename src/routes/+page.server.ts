@@ -4,7 +4,7 @@ import { PageInsights } from "$lib/db/schema.js";
 import { eq } from "drizzle-orm";
 
 export const load = async ({ fetch }) => {
-	return { streamed: { views: fetchViews(), repos: fetchRepos(fetch) } };
+	return { stream: { views: fetchViews(), repos: fetchRepos(fetch) } };
 };
 
 const fetchViews = async () => {
@@ -16,6 +16,7 @@ const fetchViews = async () => {
 	const views = ++insights[0].views;
 
 	if (!dev) {
+		// add 1 to views
 		await conn
 			.update(PageInsights)
 			.set({ views })

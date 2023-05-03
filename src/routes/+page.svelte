@@ -3,13 +3,6 @@
 	import ExternalLink from "$lib/components/ExternalLink.svelte";
 
 	export let data;
-
-	const navLinks = [
-		{ text: "About", link: "#about" },
-		{ text: "Portfolio", link: "#portfolio" },
-		{ text: "Skills", link: "#skills" },
-		{ text: "Contact", link: "#contact" },
-	];
 </script>
 
 <div
@@ -25,11 +18,18 @@
 				<h1><a class="font-mans no-underline" href="/">Ross Robino</a></h1>
 				<nav>
 					<ul class="flex flex-wrap gap-4">
-						{#each navLinks as link}
-							<li>
-								<a href={link.link}>{link.text}</a>
-							</li>
-						{/each}
+						<li>
+							<a href="#about">About</a>
+						</li>
+						<li>
+							<a href="#portfolio">Portfolio</a>
+						</li>
+						<li>
+							<a href="#skills">Skills</a>
+						</li>
+						<li>
+							<a href="#contact">Contact</a>
+						</li>
 					</ul>
 				</nav>
 			</div>
@@ -60,7 +60,7 @@
 				<section id="portfolio" class="bg-slate-50 p-4 text-p md:rounded-sm">
 					<h2>Portfolio</h2>
 					<div class="mt-4 grid grid-cols-1 gap-4 md:grid-cols-3">
-						{#await data.streamed.repos}
+						{#await data.stream.repos}
 							{#each { length: 10 } as item}
 								<div
 									class="flex h-36 animate-pulse flex-col gap-1 rounded-sm bg-p p-4 text-slate-50"
@@ -92,7 +92,11 @@
 								</div>
 							{/each}
 						{:catch}
-							<p>No repositories found.</p>
+							<p class="pt-0">
+								<a href="https://github.com/rossrobino">
+									View my portfolio on GitHub
+								</a>
+							</p>
 						{/await}
 					</div>
 				</section>
@@ -165,8 +169,8 @@
 				<li>
 					<ExternalLink share href="https://robino.dev" />
 				</li>
-				{#await data.streamed.views}
-					Loading views...
+				{#await data.stream.views}
+					<li>Loading views...</li>
 				{:then views}
 					<li class="flex items-center gap-1">
 						{views} views
