@@ -10,7 +10,7 @@
 >
 	<div class="flex min-h-[100dvh] w-full flex-col items-center">
 		<header
-			class="sticky top-0 w-full justify-center bg-slate-50 text-p md:flex"
+			class="w-full justify-center bg-slate-50 text-p md:flex"
 		>
 			<div
 				class="flex flex-col justify-between gap-2 p-4 md:w-[768px] md:flex-row md:items-center"
@@ -61,7 +61,7 @@
 					<h2>Portfolio</h2>
 					<div class="mt-4 grid grid-cols-1 gap-4 md:grid-cols-3">
 						{#await data.stream.repos}
-							{#each { length: 10 } as item}
+							{#each { length: 12 } as item}
 								<div
 									class="flex h-36 animate-pulse flex-col gap-1 rounded-sm bg-p p-4 text-slate-50"
 								/>
@@ -111,6 +111,7 @@
 							<li>TypeScript</li>
 							<li>HTML</li>
 							<li>CSS</li>
+							<li>SQL</li>
 							<li>Python</li>
 						</ul>
 					</div>
