@@ -4,7 +4,7 @@ import { PageInsights } from "$lib/db/schema.js";
 import { eq } from "drizzle-orm";
 
 export const load = async ({ fetch }) => {
-	return { stream: { views: fetchViews(), repos: fetchRepos(fetch) } };
+	return { views: fetchViews(), repos: fetchRepos(fetch) };
 };
 
 const fetchViews = async () => {

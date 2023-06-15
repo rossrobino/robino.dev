@@ -9,9 +9,7 @@
 	class="min-w-[280px] bg-p bg-[url('/images/background.webp')] md:flex md:justify-center"
 >
 	<div class="flex min-h-[100dvh] w-full flex-col items-center">
-		<header
-			class="w-full justify-center bg-slate-50 text-p md:flex"
-		>
+		<header class="w-full justify-center bg-slate-50 text-p md:flex">
 			<div
 				class="flex flex-col justify-between gap-2 p-4 md:w-[768px] md:flex-row md:items-center"
 			>
@@ -60,44 +58,30 @@
 				<section id="portfolio" class="bg-slate-50 p-4 text-p md:rounded-sm">
 					<h2>Portfolio</h2>
 					<div class="mt-4 grid grid-cols-1 gap-4 md:grid-cols-3">
-						{#await data.stream.repos}
-							{#each { length: 12 } as item}
-								<div
-									class="flex h-36 animate-pulse flex-col gap-1 rounded-sm bg-p p-4 text-slate-50"
-								/>
-							{/each}
-						{:then repos}
-							{#each repos as { homepage, name, description, html_url, full_name }}
-								<div
-									class="flex flex-col gap-1 rounded-sm bg-p p-4 text-slate-50"
-								>
-									<h3>
-										<ExternalLink
-											href={homepage ? homepage : html_url}
-											icon="home"
-										>
-											{name}
-										</ExternalLink>
-									</h3>
-									{#if description}
-										<div>
-											{description}
-										</div>
-									{/if}
+						{#each data.repos as { homepage, name, description, html_url, full_name }}
+							<div
+								class="flex flex-col gap-1 rounded-sm bg-p p-4 text-slate-50"
+							>
+								<h3>
+									<ExternalLink
+										href={homepage ? homepage : html_url}
+										icon="home"
+									>
+										{name}
+									</ExternalLink>
+								</h3>
+								{#if description}
 									<div>
-										<ExternalLink href={html_url} icon="book">
-											{full_name}
-										</ExternalLink>
+										{description}
 									</div>
+								{/if}
+								<div>
+									<ExternalLink href={html_url} icon="book">
+										{full_name}
+									</ExternalLink>
 								</div>
-							{/each}
-						{:catch}
-							<p class="pt-0">
-								<a href="https://github.com/rossrobino">
-									View my portfolio on GitHub
-								</a>
-							</p>
-						{/await}
+							</div>
+						{/each}
 					</div>
 				</section>
 				<section
@@ -170,13 +154,10 @@
 				<li>
 					<ExternalLink share href="https://robino.dev" />
 				</li>
-				{#await data.stream.views}
-					<li>Loading views...</li>
-				{:then views}
-					<li class="flex items-center gap-1">
-						{views} views
-					</li>
-				{/await}
+
+				<li class="flex items-center gap-1">
+					{data.views} views
+				</li>
 			</ul>
 		</footer>
 	</div>
