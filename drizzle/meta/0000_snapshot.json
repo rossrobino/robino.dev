@@ -1,36 +1,36 @@
 {
-  "version": "5",
-  "dialect": "pg",
-  "id": "30ea6522-8985-4bab-b27f-9ab763da7f03",
-  "prevId": "00000000-0000-0000-0000-000000000000",
-  "tables": {
-    "page_insights": {
-      "name": "page_insights",
-      "schema": "",
-      "columns": {
-        "id": {
-          "name": "id",
-          "type": "serial",
-          "primaryKey": false,
-          "notNull": true
-        },
-        "views": {
-          "name": "views",
-          "type": "integer",
-          "primaryKey": false,
-          "notNull": true
-        }
-      },
-      "indexes": {},
-      "foreignKeys": {},
-      "compositePrimaryKeys": {}
-    }
-  },
-  "enums": {},
-  "schemas": {},
-  "_meta": {
-    "schemas": {},
-    "tables": {},
-    "columns": {}
-  }
+	"version": "5",
+	"dialect": "pg",
+	"id": "30ea6522-8985-4bab-b27f-9ab763da7f03",
+	"prevId": "00000000-0000-0000-0000-000000000000",
+	"tables": {
+		"page_insights": {
+			"name": "page_insights",
+			"schema": "",
+			"columns": {
+				"id": {
+					"name": "id",
+					"type": "serial",
+					"primaryKey": false,
+					"notNull": true
+				},
+				"views": {
+					"name": "views",
+					"type": "integer",
+					"primaryKey": false,
+					"notNull": true
+				}
+			},
+			"indexes": {},
+			"foreignKeys": {},
+			"compositePrimaryKeys": {}
+		}
+	},
+	"enums": {},
+	"schemas": {},
+	"_meta": {
+		"schemas": {},
+		"tables": {},
+		"columns": {}
+	}
 }
