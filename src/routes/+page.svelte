@@ -38,7 +38,7 @@
 				/>
 			</section>
 			{#if data.repos.length}
-				<section class="my-12">
+				<section class="my-16">
 					<div class="grid grid-cols-1 gap-4 md:grid-cols-3">
 						{#each data.repos as { homepage, name, description, html_url, full_name }}
 							<a
@@ -89,7 +89,7 @@
 				</li>
 				<li>
 					<ShareButton
-						class="mt-8 rounded-sm bg-teal-500 bg-opacity-20 px-4 py-2 hover:bg-opacity-30"
+						class="mt-2 rounded-sm bg-teal-500 bg-opacity-20 px-4 py-2 hover:bg-opacity-30"
 						url="https://robino.dev"
 					/>
 				</li>
