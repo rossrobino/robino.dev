@@ -4,7 +4,6 @@
 	import Envelope from "$lib/svg/Envelope.svelte";
 	import Person from "$lib/svg/Person.svelte";
 	import Home from "$lib/svg/Home.svelte";
-	import Share from "$lib/svg/Share.svelte";
 
 	export let icon = "link";
 </script>
@@ -19,6 +18,4 @@
 	<Person />
 {:else if icon == "home"}
 	<Home />
-{:else if icon == "share"}
-	<Share />
 {/if}

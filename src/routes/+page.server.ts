@@ -1,51 +1,23 @@
-import { dev } from "$app/environment";
-import { conn } from "$lib/db/conn.server.js";
-import { PageInsights } from "$lib/db/schema.js";
-import { eq } from "drizzle-orm";
-
-export const load = async ({ fetch }) => {
-	return { views: fetchViews(), repos: fetchRepos(fetch) };
+export const load = async () => {
+	return { repos: fetchRepos() };
 };
 
-const fetchViews = async () => {
-	const insights = await conn
-		.select()
-		.from(PageInsights)
-		.where(eq(PageInsights.id, 1));
+const fetchRepos = async () => {
+	try {
+		const res = await fetch("https://api.github.com/users/rossrobino/repos");
 
-	const views = ++insights[0].views;
+		const repos: Repos = await res.json();
 
-	if (!dev) {
-		// add 1 to views
-		await conn
-			.update(PageInsights)
-			.set({ views })
-			.where(eq(PageInsights.id, 1))
-			.returning();
+		// sort by most recent first
+		repos.sort(
+			(a, b) =>
+				new Date(String(b.created_at)).valueOf() -
+				new Date(String(a.created_at)).valueOf(),
+		);
+
+		// filter out forks
+		return repos.filter((repo) => repo.fork === false);
+	} catch {
+		return [];
 	}
-
-	return views;
-};
-
-const fetchRepos = async (
-	fetch: (
-		input: RequestInfo | URL,
-		init?: RequestInit | undefined,
-	) => Promise<Response>,
-) => {
-	const res = await fetch("https://api.github.com/users/rossrobino/repos");
-
-	let repos: Repos = await res.json();
-
-	// sort by created_at date, most recent first
-	repos.sort(
-		(a, b) =>
-			new Date(String(b.created_at)).valueOf() -
-			new Date(String(a.created_at)).valueOf(),
-	);
-
-	// filter out forks
-	repos = repos.filter((repo) => repo.fork === false);
-
-	return repos;
 };
