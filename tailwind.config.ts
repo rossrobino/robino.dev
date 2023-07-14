@@ -1,6 +1,6 @@
 import typography from "@tailwindcss/typography";
+import { Config } from "tailwindcss";
 
-/** @type {import('tailwindcss').Config} */
 export default {
 	content: ["./src/**/*.{html,js,svelte,ts}"],
 	theme: {
@@ -9,9 +9,17 @@ export default {
 				p: "#0E1317",
 			},
 			fontFamily: {
-				mans: ["Mansalva", "sans-serif"],
+				test: [
+					"Seravek",
+					"Gill Sans Nova",
+					"Ubuntu",
+					"Calibri",
+					"DejaVu Sans",
+					"source-sans-pro",
+					"sans-serif",
+				],
 			},
 		},
 	},
 	plugins: [typography],
-};
+} satisfies Config;

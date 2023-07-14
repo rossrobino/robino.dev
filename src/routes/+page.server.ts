@@ -1,3 +1,7 @@
+import type { Endpoints } from "@octokit/types";
+
+type Repos = Endpoints["GET /users/{username}/repos"]["response"]["data"];
+
 export const load = async () => {
 	return { repos: fetchRepos() };
 };

@@ -11,12 +11,12 @@
 	export let data;
 </script>
 
-<div class="flex justify-center">
+<div class="flex justify-center font-test">
 	<div
 		class="prose prose-invert max-w-[75ch] p-8 text-white selection:bg-teal-700 prose-h3:my-0 prose-a:decoration-teal-500 prose-ul:list-none prose-ul:px-0 prose-li:px-0"
 	>
 		<header>
-			<h1 class="font-mans font-normal">Ross Robino</h1>
+			<h1>Ross Robino</h1>
 		</header>
 		<main>
 			<section class="grid gap-4 md:grid-cols-2">
