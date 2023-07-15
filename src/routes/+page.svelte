@@ -76,7 +76,7 @@
 						{#each features as feature}
 							<div>
 								<button
-									class="h-full rounded-sm px-4 py-2 capitalize transition hover:bg-teal-500 hover:bg-opacity-30 active:bg-opacity-20 disabled:hover:bg-transparent"
+									class="h-full rounded-sm px-4 py-2 capitalize transition hover:bg-teal-500 hover:bg-opacity-30 active:scale-95 active:bg-opacity-20 disabled:hover:bg-transparent"
 									disabled={currentFeature === feature}
 									on:click={() => sortRepos(feature)}
 								>
@@ -149,7 +149,7 @@
 				</li>
 				<li>
 					<ShareButton
-						class="mt-2 rounded-sm bg-teal-500 bg-opacity-20 px-4 py-2 transition hover:bg-opacity-30 active:bg-opacity-20"
+						class="mt-2 rounded-sm bg-teal-500 bg-opacity-20 px-4 py-2 transition hover:bg-opacity-30 active:scale-95 active:bg-opacity-20"
 						url="https://robino.dev"
 					/>
 				</li>
