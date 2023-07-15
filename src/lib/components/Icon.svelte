@@ -12,10 +12,10 @@
 	<Link />
 {:else if icon === "book"}
 	<Book />
-{:else if icon == "envelope"}
+{:else if icon === "envelope"}
 	<Envelope />
-{:else if icon == "person"}
+{:else if icon === "person"}
 	<Person />
-{:else if icon == "home"}
+{:else if icon === "home"}
 	<Home />
 {/if}

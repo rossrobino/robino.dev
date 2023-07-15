@@ -13,9 +13,7 @@
 	class="group flex w-fit gap-1.5 pr-8 hover:pr-2 {className}"
 >
 	<slot />
-	{#if icon}
-		<span class="hidden items-center group-hover:flex">
-			<Icon {icon} />
-		</span>
-	{/if}
+	<div class="flex scale-0 items-center group-hover:scale-100">
+		<Icon {icon} />
+	</div>
 </a>

@@ -13,11 +13,9 @@ const fetchRepos = async () => {
 		const repos: Repos = await res.json();
 
 		// sort by most recent first
-		repos.sort(
-			(a, b) =>
-				new Date(String(b.created_at)).valueOf() -
-				new Date(String(a.created_at)).valueOf(),
-		);
+		repos.sort((a, b) => {
+			return Number(b.stargazers_count) - Number(a.stargazers_count);
+		});
 
 		// filter out forks
 		return repos.filter((repo) => repo.fork === false);
