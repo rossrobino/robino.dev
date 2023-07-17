@@ -44,7 +44,7 @@
 	};
 </script>
 
-<div class="flex justify-center font-test">
+<div class="flex justify-center font-humanist">
 	<div
 		class="prose prose-invert max-w-screen-lg p-8 text-white selection:bg-teal-700 prose-h3:my-0 prose-a:decoration-teal-500 prose-ul:list-none prose-ul:px-0 prose-li:px-0"
 	>
@@ -52,23 +52,27 @@
 			<h1>Ross Robino</h1>
 		</header>
 		<main>
-			<section class="mb-16 grid md:grid-cols-2 md:gap-4">
-				<div class="order-last md:order-first">
-					<h2>Welcome to my personal website</h2>
+			<section class="mb-12 grid md:grid-cols-3 md:gap-4">
+				<div class="flex flex-col justify-center md:col-span-2">
+					<h2 class="text-wrap-balance mt-4 text-5xl">
+						Welcome to my personal website
+					</h2>
 					<p>
 						I work as a Business Innovation Analyst at PepsiCo. Some of my
 						hobbies are skiing, running, and playing guitar.
 					</p>
 					<p>
-						Feel free to check out my programming projects or contact me using
-						the links below.
+						Check out my programming projects or contact me using the links
+						below.
 					</p>
 				</div>
-				<img
-					src={profilePic}
-					alt="Ross at the top of Blarney Castle in Ireland."
-					class="aspect-[3/4] rounded-sm"
-				/>
+				<div class="flex h-full flex-col justify-center">
+					<img
+						src={profilePic}
+						alt="Ross at the top of Blarney Castle in Ireland."
+						class="aspect-[3/4] rounded-sm"
+					/>
+				</div>
 			</section>
 			{#if data.repos.length}
 				<section class="mb-24">
@@ -157,3 +161,9 @@
 		</footer>
 	</div>
 </div>
+
+<style lang="postcss">
+	.text-wrap-balance {
+		text-wrap: balance;
+	}
+</style>

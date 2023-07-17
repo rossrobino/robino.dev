@@ -9,7 +9,7 @@ export default {
 				p: "#0E1317",
 			},
 			fontFamily: {
-				test: [
+				humanist: [
 					"Seravek",
 					"Gill Sans Nova",
 					"Ubuntu",
