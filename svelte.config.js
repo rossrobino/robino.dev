@@ -5,6 +5,10 @@ import { vitePreprocess } from "@sveltejs/kit/vite";
 export default {
 	preprocess: vitePreprocess(),
 	kit: {
-		adapter: adapter({ runtime: "edge" }),
+		adapter: adapter({
+			isr: {
+				expiration: 60 * 60 * 24,
+			},
+		}),
 	},
 };
