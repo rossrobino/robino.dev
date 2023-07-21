@@ -48,7 +48,7 @@
 		const observer = new IntersectionObserver(
 			(entries) => {
 				for (const entry of entries) {
-					entry.target.classList.toggle("scale-95", !entry.isIntersecting);
+					entry.target.classList.toggle("scale-[97%]", !entry.isIntersecting);
 				}
 			},
 			{
