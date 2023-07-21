@@ -45,11 +45,16 @@
 	};
 
 	onMount(() => {
-		const observer = new IntersectionObserver((entries) => {
-			for (const entry of entries) {
-				entry.target.classList.toggle("scale-95", !entry.isIntersecting);
-			}
-		});
+		const observer = new IntersectionObserver(
+			(entries) => {
+				for (const entry of entries) {
+					entry.target.classList.toggle("scale-95", !entry.isIntersecting);
+				}
+			},
+			{
+				threshold: 0.1,
+			},
+		);
 
 		const sections = document.querySelectorAll("section");
 
