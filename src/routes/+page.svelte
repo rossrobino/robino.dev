@@ -1,10 +1,11 @@
 <script lang="ts">
 	import "../app.postcss";
 	import { dev } from "$app/environment";
+	import { onMount } from "svelte";
 	import { inject } from "@vercel/analytics";
+	import { ShareButton } from "@rossrobino/components";
 	import profilePic from "$lib/images/ross.webp";
 	import ExternalLink from "$lib/components/ExternalLink.svelte";
-	import { ShareButton } from "@rossrobino/components";
 	import Star from "$lib/svg/Star.svelte";
 
 	inject({ mode: dev ? "development" : "production" });
@@ -42,6 +43,27 @@
 			sort();
 		}
 	};
+
+	onMount(() => {
+		const observer = new IntersectionObserver(
+			(entries) => {
+				for (const entry of entries) {
+					entry.target.classList.toggle("scale-95", !entry.isIntersecting);
+				}
+			},
+			{
+				threshold: 0.1,
+			},
+		);
+
+		const sections = document.querySelectorAll("section");
+
+		if (sections) {
+			for (const section of sections) {
+				observer.observe(section);
+			}
+		}
+	});
 </script>
 
 <div class="flex justify-center font-humanist">
@@ -52,8 +74,10 @@
 			<h1>Ross Robino</h1>
 		</header>
 		<main>
-			<section class="mb-12 grid md:grid-cols-3 md:gap-4">
-				<div class="flex flex-col justify-center md:col-span-2">
+			<section
+				class="mb-8 grid min-h-[calc(100vh-9rem)] md:grid-cols-2 md:gap-4"
+			>
+				<div class="flex flex-col justify-center">
 					<h2 class="text-wrap-balance mt-4 text-5xl">
 						Welcome to my personal website
 					</h2>
@@ -161,9 +185,3 @@
 		</footer>
 	</div>
 </div>
-
-<style lang="postcss">
-	.text-wrap-balance {
-		text-wrap: balance;
-	}
-</style>
