@@ -1,7 +1,6 @@
 <script lang="ts">
 	import "../app.postcss";
 	import { dev } from "$app/environment";
-	import { onMount } from "svelte";
 	import { inject } from "@vercel/analytics";
 	import { ShareButton } from "@rossrobino/components";
 	import profilePic from "$lib/images/ross.webp";
@@ -43,27 +42,6 @@
 			sort();
 		}
 	};
-
-	onMount(() => {
-		const observer = new IntersectionObserver(
-			(entries) => {
-				for (const entry of entries) {
-					entry.target.classList.toggle("scale-[97%]", !entry.isIntersecting);
-				}
-			},
-			{
-				threshold: 0.1,
-			},
-		);
-
-		const sections = document.querySelectorAll("section");
-
-		if (sections) {
-			for (const section of sections) {
-				observer.observe(section);
-			}
-		}
-	});
 </script>
 
 <div class="flex justify-center font-humanist">
