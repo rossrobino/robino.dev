@@ -1,4 +1,5 @@
-{
+/** @type {import("prettier").Options} */
+export default {
 	"useTabs": true,
 	"trailingComma": "all",
 	"printWidth": 80,
