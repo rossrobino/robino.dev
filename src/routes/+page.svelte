@@ -2,7 +2,7 @@
 	import "../app.postcss";
 	import { dev } from "$app/environment";
 	import { inject } from "@vercel/analytics";
-	import { ShareButton } from "@rossrobino/components";
+	import { ShareButton } from "drab";
 	import profilePic from "$lib/images/ross.webp";
 	import ExternalLink from "$lib/components/ExternalLink.svelte";
 	import Star from "$lib/svg/Star.svelte";
@@ -156,7 +156,7 @@
 				<li>
 					<ShareButton
 						class="mt-2 rounded-sm bg-teal-500 bg-opacity-20 px-4 py-2 transition hover:bg-opacity-30 active:scale-95 active:bg-opacity-20"
-						url="https://robino.dev"
+						shareData={{ url: "https://robino.dev" }}
 					/>
 				</li>
 			</ul>
