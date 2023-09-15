@@ -1,10 +1,9 @@
-/** @type {import("prettier").Options} */
+import config from "robino/config/prettier"
+
+/** @type {import("prettier").Config} */
 export default {
-	"useTabs": true,
-	"trailingComma": "all",
-	"printWidth": 80,
+	...config,
 	"plugins": ["prettier-plugin-svelte", "prettier-plugin-tailwindcss"],
-	"pluginSearchDirs": ["."],
 	"overrides": [
 		{
 			"files": "*.svelte",
