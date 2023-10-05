@@ -136,14 +136,14 @@
 		<footer class="mb-12">
 			<ul>
 				<li>
-					<ExternalLink href="mailto:ross@robino.dev" icon="envelope"
-						>Email</ExternalLink
-					>
+					<ExternalLink href="mailto:ross@robino.dev" icon="envelope">
+						Email
+					</ExternalLink>
 				</li>
 				<li>
-					<ExternalLink href="https://github.com/rossrobino" icon="person"
-						>GitHub</ExternalLink
-					>
+					<ExternalLink href="https://github.com/rossrobino" icon="person">
+						GitHub
+					</ExternalLink>
 				</li>
 				<li>
 					<ExternalLink
