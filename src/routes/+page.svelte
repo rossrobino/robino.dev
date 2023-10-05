@@ -101,7 +101,7 @@
 						{#each data.repos as { homepage, name, description, html_url, full_name, stargazers_count }}
 							<div
 								class="flex flex-col justify-between gap-1 rounded-sm bg-white bg-opacity-10 p-4"
-								style="view-transition-name: repo-{name};"
+								style="view-transition-name: repo-{name.replace('.', '')};"
 							>
 								<div>
 									<h3>
