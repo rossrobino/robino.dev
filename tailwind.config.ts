@@ -1,25 +1,14 @@
+import type { Config } from "tailwindcss";
 import typography from "@tailwindcss/typography";
-import { Config } from "tailwindcss";
+import { uico } from "uico";
 
 export default {
 	content: ["./src/**/*.{html,js,svelte,ts}"],
-	theme: {
-		extend: {
-			colors: {
-				p: "#0E1317",
-			},
-			fontFamily: {
-				humanist: [
-					"Seravek",
-					"Gill Sans Nova",
-					"Ubuntu",
-					"Calibri",
-					"DejaVu Sans",
-					"source-sans-pro",
-					"sans-serif",
-				],
-			},
-		},
-	},
-	plugins: [typography],
+	plugins: [
+		typography,
+		uico({
+			colorFunction: "oklch",
+			colorPalette: "oklch",
+		}),
+	],
 } satisfies Config;

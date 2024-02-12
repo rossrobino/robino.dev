@@ -1,6 +1,5 @@
-import type { Endpoints } from "@octokit/types";
-
-type Repos = Endpoints["GET /users/{username}/repos"]["response"]["data"];
+import { dev } from "$app/environment";
+import type { Repos } from "$lib/types";
 
 export const load = async () => {
 	const repos = await fetchRepos();
@@ -18,9 +17,62 @@ const fetchRepos = async () => {
 			return Number(b.stargazers_count) - Number(a.stargazers_count);
 		});
 
-		// filter out forks
-		return repos.filter((repo) => repo.fork === false);
+		const projectNames = [
+			"drab",
+			"typo",
+			"gpt",
+			"uico",
+			"domco",
+			"papi",
+			"splits",
+			"plought",
+			"blog",
+		];
+
+		const filtered = repos.filter((repo) => {
+			return projectNames.includes(repo.name);
+		});
+
+		return filtered;
 	} catch {
+		if (dev) {
+			const mock = [
+				{
+					homepage: "https://robino.dev",
+					name: "Name",
+					description: "A description of the repo",
+					html_url: "https://robino.dev",
+					full_name: "rossrobino/name",
+					stargazers_count: 10,
+				},
+				{
+					homepage: "https://robino.dev",
+					name: "Name",
+					description: "A description of the repo",
+					html_url: "https://robino.dev",
+					full_name: "rossrobino/name",
+					stargazers_count: 10,
+				},
+				{
+					homepage: "https://robino.dev",
+					name: "Name",
+					description: "A description of the repo",
+					html_url: "https://robino.dev",
+					full_name: "rossrobino/name",
+					stargazers_count: 10,
+				},
+				{
+					homepage: "https://robino.dev",
+					name: "Name",
+					description: "A description of the repo",
+					html_url: "https://robino.dev",
+					full_name: "rossrobino/name",
+					stargazers_count: 10,
+				},
+			] as Repos;
+
+			return mock;
+		}
 		return [];
 	}
 };

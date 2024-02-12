@@ -4,7 +4,7 @@
 	import { inject } from "@vercel/analytics";
 	import profilePic from "$lib/images/ross.webp";
 	import ExternalLink from "$lib/components/ExternalLink.svelte";
-	import Star from "$lib/svg/Star.svelte";
+	import Projects from "$lib/components/Projects.svelte";
 	import { onMount } from "svelte";
 
 	inject({ mode: dev ? "development" : "production" });
@@ -16,162 +16,82 @@
 			await import("drab/share/define");
 		}
 	});
-
-	const features = ["stargazers_count", "created_at", "pushed_at"] as const;
-
-	let currentFeature = "stargazers_count";
-
-	const sortRepos = (feature: (typeof features)[number]) => {
-		const sort = () => {
-			if (feature === "created_at" || feature === "pushed_at") {
-				data.repos.sort(
-					(a, b) =>
-						new Date(String(b[feature])).valueOf() -
-						new Date(String(a[feature])).valueOf(),
-				);
-			} else if (feature === "stargazers_count") {
-				data.repos.sort((a, b) => {
-					return Number(b[feature]) - Number(a[feature]);
-				});
-			}
-			currentFeature = feature;
-			data.repos = data.repos;
-		};
-
-		// @ts-expect-error
-		if (document.startViewTransition) {
-			// @ts-expect-error
-			document.startViewTransition(() => {
-				sort();
-			});
-		} else {
-			sort();
-		}
-	};
 </script>
 
-<div class="flex justify-center font-humanist">
-	<div
-		class="prose prose-invert max-w-screen-lg p-8 text-white selection:bg-teal-700 prose-h3:my-0 prose-a:decoration-teal-500 prose-ul:list-none prose-ul:px-0 prose-li:px-0"
-	>
-		<header>
-			<h1>Ross Robino</h1>
-		</header>
-		<main>
-			<section
-				class="mb-8 grid min-h-[calc(100vh-9rem)] md:grid-cols-2 md:gap-4"
+<div
+	class="selection:bg-destructive selection:text-destructive-foreground prose font-humanist"
+>
+	<header class="bg-primary prose prose-invert flex justify-center px-8 py-6">
+		<div class="max-w-screen-lg basis-full">
+			<h2 class="m-0">Ross Robino</h2>
+		</div>
+	</header>
+	<main>
+		<section
+			class="bg-primary prose prose-invert flex justify-center px-8 pb-6"
+		>
+			<div
+				class="grid max-w-screen-lg basis-full grid-cols-1 md:grid-cols-5 md:gap-4"
 			>
-				<div class="flex flex-col justify-center">
-					<h2 class="text-wrap-balance mt-4 text-balance text-5xl">
-						Welcome to my personal website
-					</h2>
-					<p>
-						I work as a Business Innovation Analyst at PepsiCo. Some of my
-						hobbies are skiing, running, and playing guitar.
-					</p>
-					<p>
-						Check out my programming projects or contact me using the links
-						below.
-					</p>
+				<div class="flex flex-col justify-center md:col-span-3">
+					<div>
+						<h1 class="text-balance">Welcome to my personal website</h1>
+						<p>
+							I work as a Business Innovation Analyst at PepsiCo. Some of my
+							hobbies are skiing, running, and playing guitar.
+						</p>
+						<p>
+							Check out my programming projects or contact me using the links
+							below.
+						</p>
+					</div>
 				</div>
-				<div class="flex h-full flex-col justify-center">
+				<div class="col-span-2">
 					<img
 						src={profilePic}
 						alt="Ross at the top of Blarney Castle in Ireland."
 						class="aspect-[3/4] rounded-sm"
 					/>
 				</div>
+			</div>
+		</section>
+		{#if data.repos.length}
+			<section class="flex justify-center px-8 py-12">
+				<div class="max-w-screen-lg basis-full">
+					<h2 class="mt-0">Projects</h2>
+					<Projects repos={data.repos} />
+				</div>
 			</section>
-			{#if data.repos.length}
-				<section class="mb-24">
-					<div class="flex flex-wrap gap-2 py-4">
-						{#each features as feature}
-							<div>
-								<button
-									class="h-full rounded-sm px-4 py-2 capitalize transition hover:bg-teal-500 hover:bg-opacity-30 active:scale-95 active:bg-opacity-20 disabled:hover:bg-transparent"
-									disabled={currentFeature === feature}
-									on:click={() => sortRepos(feature)}
-								>
-									{feature.split("_").join(" ")}
-								</button>
-								{#if currentFeature === feature}
-									<div
-										style="view-transition-name: selectedFilter;"
-										class="bg-teal-500 p-[0.06rem]"
-									/>
-								{/if}
-							</div>
-						{/each}
-					</div>
-					<div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-						{#each data.repos as { homepage, name, description, html_url, full_name, stargazers_count }}
-							<div
-								class="flex flex-col justify-between gap-1 rounded-sm bg-white bg-opacity-10 p-4"
-								style="view-transition-name: repo-{name.replace('.', '')};"
-							>
-								<div>
-									<h3>
-										<ExternalLink
-											href={homepage ? homepage : html_url}
-											icon="home"
-										>
-											{name}
-										</ExternalLink>
-									</h3>
-									{#if description}
-										<div>{description}</div>
-									{/if}
-								</div>
-								<div class="flex justify-between gap-1">
-									<div class="flex justify-between gap-2">
-										<ExternalLink href={html_url} icon="book">
-											{full_name}
-										</ExternalLink>
-									</div>
-									<div class="flex items-center gap-1">
-										<Star />
-										<span class="pt-0.5">{stargazers_count}</span>
-									</div>
-								</div>
-							</div>
-						{/each}
-					</div>
-				</section>
-			{/if}
-		</main>
-		<footer class="mb-12">
-			<ul>
-				<li>
-					<ExternalLink href="mailto:ross@robino.dev" icon="envelope">
-						Email
-					</ExternalLink>
-				</li>
-				<li>
-					<ExternalLink href="https://github.com/rossrobino" icon="person">
-						GitHub
-					</ExternalLink>
-				</li>
-				<li>
-					<ExternalLink
-						href="https://www.linkedin.com/in/rossrobino/"
-						icon="person"
-					>
-						LinkedIn
-					</ExternalLink>
-				</li>
-				<li>
-					<drab-share value="https://robino.dev">
-						<button
-							data-trigger
-							type="button"
-							class="button button-primary gap-1.5"
-						>
-							<span data-content>Share</span>
-							<template data-swap>Copied</template>
-						</button>
-					</drab-share>
-				</li>
-			</ul>
-		</footer>
-	</div>
+		{/if}
+	</main>
+	<footer class="bg-accent prose prose-invert flex justify-center px-8 py-4">
+		<ul class="max-w-screen-lg basis-full list-none pl-0">
+			<li>
+				<ExternalLink href="mailto:ross@robino.dev" icon="envelope">
+					Email
+				</ExternalLink>
+			</li>
+			<li>
+				<ExternalLink href="https://github.com/rossrobino" icon="person">
+					GitHub
+				</ExternalLink>
+			</li>
+			<li>
+				<ExternalLink
+					href="https://www.linkedin.com/in/rossrobino/"
+					icon="person"
+				>
+					LinkedIn
+				</ExternalLink>
+			</li>
+			<li>
+				<drab-share value="https://robino.dev">
+					<button data-trigger type="button" class="button button-primary">
+						<span data-content>Share</span>
+						<template data-swap>Copied</template>
+					</button>
+				</drab-share>
+			</li>
+		</ul>
+	</footer>
 </div>
