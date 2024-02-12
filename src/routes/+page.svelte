@@ -2,14 +2,20 @@
 	import "../app.postcss";
 	import { dev } from "$app/environment";
 	import { inject } from "@vercel/analytics";
-	import { ShareButton } from "drab";
 	import profilePic from "$lib/images/ross.webp";
 	import ExternalLink from "$lib/components/ExternalLink.svelte";
 	import Star from "$lib/svg/Star.svelte";
+	import { onMount } from "svelte";
 
 	inject({ mode: dev ? "development" : "production" });
 
 	export let data;
+
+	onMount(async () => {
+		if (!customElements.get("drab-share")) {
+			await import("drab/share/define");
+		}
+	});
 
 	const features = ["stargazers_count", "created_at", "pushed_at"] as const;
 
@@ -56,7 +62,7 @@
 				class="mb-8 grid min-h-[calc(100vh-9rem)] md:grid-cols-2 md:gap-4"
 			>
 				<div class="flex flex-col justify-center">
-					<h2 class="text-wrap-balance mt-4 text-5xl">
+					<h2 class="text-wrap-balance mt-4 text-balance text-5xl">
 						Welcome to my personal website
 					</h2>
 					<p>
@@ -154,10 +160,16 @@
 					</ExternalLink>
 				</li>
 				<li>
-					<ShareButton
-						class="mt-2 rounded-sm bg-teal-500 bg-opacity-20 px-4 py-2 transition hover:bg-opacity-30 active:scale-95 active:bg-opacity-20"
-						shareData={{ url: "https://robino.dev" }}
-					/>
+					<drab-share value="https://robino.dev">
+						<button
+							data-trigger
+							type="button"
+							class="button button-primary gap-1.5"
+						>
+							<span data-content>Share</span>
+							<template data-swap>Copied</template>
+						</button>
+					</drab-share>
 				</li>
 			</ul>
 		</footer>
