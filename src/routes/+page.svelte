@@ -19,16 +19,16 @@
 </script>
 
 <div
-	class="selection:bg-destructive selection:text-destructive-foreground prose font-humanist"
+	class="prose font-humanist selection:bg-destructive selection:text-destructive-foreground"
 >
-	<header class="bg-primary prose prose-invert flex justify-center px-8 py-6">
+	<header class="prose prose-invert flex justify-center bg-primary px-8 py-6">
 		<div class="max-w-screen-lg basis-full">
 			<h2 class="m-0">Ross Robino</h2>
 		</div>
 	</header>
 	<main>
 		<section
-			class="bg-primary prose prose-invert flex justify-center px-8 pb-6"
+			class="prose prose-invert flex justify-center bg-primary px-8 pb-6"
 		>
 			<div
 				class="grid max-w-screen-lg basis-full grid-cols-1 md:grid-cols-5 md:gap-4"
@@ -64,7 +64,7 @@
 			</section>
 		{/if}
 	</main>
-	<footer class="bg-accent prose prose-invert flex justify-center px-8 py-4">
+	<footer class="prose prose-invert flex justify-center bg-accent px-8 py-4">
 		<ul class="max-w-screen-lg basis-full list-none pl-0">
 			<li>
 				<ExternalLink href="mailto:ross@robino.dev" icon="envelope">
