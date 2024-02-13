@@ -63,7 +63,7 @@
 	>
 		<div class="max-w-screen-lg basis-full">
 			<ul class="m-0 list-none pl-0">
-				<li>
+				<li class="mt-0">
 					<ExternalLink href="mailto:ross@robino.dev" icon="envelope">
 						Email
 					</ExternalLink>
@@ -81,7 +81,7 @@
 						LinkedIn
 					</ExternalLink>
 				</li>
-				<li>
+				<li class="mb-0">
 					<drab-share class="contents" value="https://robino.dev">
 						<button
 							data-trigger
