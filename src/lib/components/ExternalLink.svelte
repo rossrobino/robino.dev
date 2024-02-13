@@ -10,7 +10,7 @@
 <a
 	{href}
 	rel="external"
-	class="group flex w-fit gap-1.5 pr-8 hover:pr-2 {className}"
+	class="group m-0 flex w-fit gap-1.5 pr-8 hover:pr-2 {className}"
 >
 	<slot />
 	<div class="flex scale-0 items-center transition group-hover:scale-100">

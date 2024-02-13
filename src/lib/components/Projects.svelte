@@ -60,7 +60,7 @@
 <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
 	{#each repos as { homepage, name, description, html_url, full_name, stargazers_count }}
 		<div
-			class="card flex flex-col justify-between gap-1 rounded border border-dashed bg-primary-foreground/30 shadow-sm transition-shadow hover:shadow"
+			class="card bg-primary-foreground/30 flex flex-col justify-between gap-1 rounded border border-dashed shadow-sm transition-shadow hover:shadow"
 			style="view-transition-name: repo-{name.replace('.', '')};"
 		>
 			<div>
