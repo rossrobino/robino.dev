@@ -19,7 +19,7 @@
 </script>
 
 <div
-	class="selection:bg-destructive selection:text-destructive-foreground prose font-humanist"
+	class="selection:bg-destructive selection:text-destructive-foreground prose font-humanist prose-a:underline-offset-2"
 >
 	<main>
 		<section class="bg-primary prose prose-invert flex justify-center p-8">
