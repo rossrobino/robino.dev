@@ -3,7 +3,7 @@ import typography from "@tailwindcss/typography";
 import { uico } from "uico";
 
 export default {
-	content: ["./src/**/*.{html,js,svelte,ts}"],
+	content: ["./src/**/*.{html,js,svelte,ts,md}"],
 	plugins: [
 		typography,
 		uico({

@@ -1,99 +1,41 @@
 <script lang="ts">
-	import "../app.postcss";
-	import { dev } from "$app/environment";
-	import { inject } from "@vercel/analytics";
 	import profilePic from "$lib/images/ross.webp";
-	import ExternalLink from "$lib/components/ExternalLink.svelte";
 	import Projects from "$lib/components/Projects.svelte";
-	import { onMount } from "svelte";
-
-	inject({ mode: dev ? "development" : "production" });
 
 	export let data;
-
-	onMount(async () => {
-		if (!customElements.get("drab-share")) {
-			await import("drab/share/define");
-		}
-	});
 </script>
 
-<div
-	class="selection:bg-destructive selection:text-destructive-foreground prose font-humanist prose-a:underline-offset-2"
->
-	<main>
-		<section class="bg-primary prose prose-invert flex justify-center p-8">
-			<div
-				class="grid max-w-screen-lg basis-full grid-cols-1 md:grid-cols-5 md:gap-4"
-			>
-				<div class="flex flex-col justify-center md:col-span-3">
-					<div>
-						<h1>Ross Robino</h1>
-						<p>
-							Welcome to my personal website. I work as a Business Innovation
-							Analyst at PepsiCo. Some of my hobbies are skiing, running, and
-							playing guitar.
-						</p>
-						<p>
-							Check out my programming projects or contact me using the links
-							below.
-						</p>
-					</div>
-				</div>
-				<div class="col-span-2">
-					<img
-						src={profilePic}
-						alt="Ross at the top of Blarney Castle in Ireland."
-						class="m-0 aspect-[3/4] rounded-sm"
-					/>
-				</div>
-			</div>
-		</section>
-		{#if data.repos.length}
-			<section class="flex justify-center p-8">
-				<div class="max-w-screen-lg basis-full">
-					<h2 class="mt-0">Projects</h2>
-					<Projects repos={data.repos} />
-				</div>
-			</section>
-		{/if}
-	</main>
-	<footer
-		class="bg-accent prose prose-invert flex justify-center p-8 prose-li:pl-0"
+<section class="prose prose-invert flex justify-center bg-primary p-8">
+	<div
+		class="grid max-w-screen-lg basis-full grid-cols-1 md:grid-cols-5 md:gap-4"
 	>
-		<div class="max-w-screen-lg basis-full">
-			<ul class="m-0 list-none pl-0">
-				<li class="mt-0">
-					<ExternalLink href="mailto:ross@robino.dev" icon="envelope">
-						Email
-					</ExternalLink>
-				</li>
-				<li>
-					<ExternalLink href="https://github.com/rossrobino" icon="person">
-						GitHub
-					</ExternalLink>
-				</li>
-				<li>
-					<ExternalLink
-						href="https://www.linkedin.com/in/rossrobino/"
-						icon="person"
-					>
-						LinkedIn
-					</ExternalLink>
-				</li>
-				<li class="mb-0">
-					<drab-share class="contents" value="https://robino.dev">
-						<button
-							data-trigger
-							type="button"
-							class="button button-primary mt-3"
-						>
-							<span data-content>Share</span>
-							<template data-swap>Copied</template>
-						</button>
-					</drab-share>
-				</li>
-			</ul>
+		<div class="flex flex-col justify-center md:col-span-3">
+			<div>
+				<h1>Ross Robino</h1>
+				<p>
+					Welcome to my personal website. I work as a Business Innovation
+					Analyst at PepsiCo. Some of my hobbies are skiing, running, and
+					playing guitar.
+				</p>
+				<p>
+					Check out my programming projects or contact me using the links below.
+				</p>
+			</div>
 		</div>
-	</footer>
-</div>
+		<div class="col-span-2">
+			<img
+				src={profilePic}
+				alt="Ross at the top of Blarney Castle in Ireland."
+				class="m-0 aspect-[3/4] rounded-sm"
+			/>
+		</div>
+	</div>
+</section>
+{#if data.repos.length}
+	<section class="flex justify-center p-8">
+		<div class="max-w-screen-lg basis-full">
+			<h2 class="mt-0">Projects</h2>
+			<Projects repos={data.repos} />
+		</div>
+	</section>
+{/if}
