@@ -1,16 +1,34 @@
 import { dev } from "$app/environment";
 import type { Repos } from "$lib/types";
+import { process } from "robino/util/md";
 
 export const load = async () => {
-	const repos = await fetchRepos();
-	return { repos };
+	const [repos, readme] = await Promise.all([fetchRepos(), fetchReadme()]);
+	return { repos, readme };
+};
+
+const fetchReadme = async () => {
+	const res = await fetch(
+		"https://raw.githubusercontent.com/rossrobino/rossrobino/main/README.md",
+	);
+
+	let readme = await res.text();
+
+	// remove h1
+	readme = readme.split("\n").slice(2).join("\n");
+
+	const { html } = await process(readme);
+
+	return html;
 };
 
 const fetchRepos = async () => {
 	try {
-		const res = await fetch("https://api.github.com/users/rossrobino/repos");
+		const reposRes = await fetch(
+			"https://api.github.com/users/rossrobino/repos",
+		);
 
-		const repos: Repos = await res.json();
+		const repos: Repos = await reposRes.json();
 
 		// sort by most recent first
 		repos.sort((a, b) => {

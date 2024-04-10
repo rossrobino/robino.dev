@@ -15,7 +15,7 @@
 </script>
 
 <div
-	class="prose font-humanist selection:bg-destructive selection:text-destructive-foreground prose-a:underline-offset-2"
+	class="prose font-humanist selection:bg-accent selection:text-primary-foreground prose-a:underline-offset-2"
 >
 	<main>
 		<slot />

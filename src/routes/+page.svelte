@@ -7,31 +7,24 @@
 
 <section class="prose prose-invert flex justify-center bg-primary p-8">
 	<div
-		class="grid max-w-screen-lg basis-full grid-cols-1 md:grid-cols-5 md:gap-4"
+		class="grid max-w-screen-lg basis-full grid-cols-1 md:grid-cols-5 md:gap-6"
 	>
 		<div class="flex flex-col justify-center md:col-span-3">
 			<div>
 				<h1>Ross Robino</h1>
-				<p>
-					Welcome to my personal website. I work as a Business Innovation
-					Analyst at PepsiCo. Some of my hobbies are skiing, running, and
-					playing guitar.
-				</p>
-				<p>
-					Check out my programming projects or contact me using the links below.
-				</p>
+				{@html data.readme}
 			</div>
 		</div>
-		<div class="col-span-2">
+		<div class="col-span-2 flex items-center">
 			<img
 				src={profilePic}
 				alt="Ross at the top of Blarney Castle in Ireland."
-				class="m-0 aspect-[3/4] rounded-sm"
+				class="m-0 aspect-[3/4] rounded"
 			/>
 		</div>
 	</div>
 </section>
-{#if data.repos.length}
+{#if data.repos}
 	<section class="flex justify-center p-8">
 		<div class="max-w-screen-lg basis-full">
 			<h2 class="mt-0">Projects</h2>
