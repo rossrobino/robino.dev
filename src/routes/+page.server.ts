@@ -1,6 +1,6 @@
 import { dev } from "$app/environment";
 import type { Repos } from "$lib/types";
-import { process } from "robino/util/md";
+import { processMarkdown } from "robino/util/md";
 
 export const load = async () => {
 	const [repos, readme] = await Promise.all([fetchRepos(), fetchReadme()]);
@@ -17,7 +17,7 @@ const fetchReadme = async () => {
 	// remove h1
 	readme = readme.split("\n").slice(2).join("\n");
 
-	const { html } = await process(readme);
+	const { html } = await processMarkdown(readme);
 
 	return html;
 };
