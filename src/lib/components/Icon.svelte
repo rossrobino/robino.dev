@@ -5,7 +5,7 @@
 	import Person from "$lib/svg/Person.svelte";
 	import Home from "$lib/svg/Home.svelte";
 
-	export let icon = "link";
+	let { icon = "link" } = $props();
 </script>
 
 {#if icon === "link"}

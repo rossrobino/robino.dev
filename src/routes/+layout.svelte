@@ -5,6 +5,8 @@
 	import ExternalLink from "$lib/components/ExternalLink.svelte";
 	import { onMount } from "svelte";
 
+	let { children } = $props();
+
 	inject({ mode: dev ? "development" : "production" });
 
 	onMount(async () => {
@@ -18,7 +20,7 @@
 	class="prose font-humanist selection:bg-accent selection:text-primary-foreground prose-a:underline-offset-2"
 >
 	<main>
-		<slot />
+		{@render children()}
 	</main>
 	<footer
 		class="prose prose-invert flex justify-center bg-accent p-8 prose-li:pl-0"

@@ -3,11 +3,11 @@
 	import ExternalLink from "./ExternalLink.svelte";
 	import type { Repos } from "$lib/types";
 
-	export let repos: Repos;
+	let { repos }: { repos: Repos } = $props();
 
 	const features = ["stargazers_count", "created_at", "pushed_at"] as const;
 
-	let currentFeature = "stargazers_count";
+	let currentFeature = $state("stargazers_count");
 
 	const sortRepos = (feature: (typeof features)[number]) => {
 		const sort = () => {
@@ -44,7 +44,7 @@
 			<button
 				class="button button-ghost capitalize"
 				disabled={currentFeature === feature}
-				on:click={() => sortRepos(feature)}
+				onclick={() => sortRepos(feature)}
 			>
 				{feature.split("_").join(" ")}
 			</button>
@@ -52,7 +52,7 @@
 				<div
 					style="view-transition-name: selectedFilter;"
 					class="bg-secondary p-[0.06rem]"
-				/>
+				></div>
 			{/if}
 		</div>
 	{/each}
@@ -60,7 +60,7 @@
 <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
 	{#each repos as { homepage, name, description, html_url, full_name, stargazers_count }}
 		<div
-			class="card bg-primary-foreground/30 flex flex-col justify-between gap-1 rounded border border-dashed shadow-sm transition-shadow hover:shadow"
+			class="card flex flex-col justify-between gap-1 rounded border border-dashed bg-primary-foreground/30 shadow-sm transition-shadow hover:shadow"
 			style="view-transition-name: repo-{name.replace('.', '')};"
 		>
 			<div>

@@ -2,7 +2,7 @@
 	import profilePic from "$lib/images/ross.webp";
 	import Projects from "$lib/components/Projects.svelte";
 
-	export let data;
+	let { data } = $props();
 </script>
 
 <section class="prose prose-invert flex justify-center bg-primary p-8">
