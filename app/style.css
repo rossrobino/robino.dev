@@ -1,0 +1,113 @@
+@import "uico/style.css";
+
+@layer base {
+	::view-transition-group(*) {
+		animation-duration: 0.4s;
+	}
+	@media (prefers-reduced-motion) {
+		::view-transition-group(*) {
+			animation-duration: 0s;
+		}
+	}
+
+	:root {
+		--base: rgb(75, 76, 100);
+		--light-end: 0.1;
+		--accent: var(--base-950);
+	}
+
+	body {
+		margin-inline: auto;
+		padding: var(--size-6);
+		max-width: 105ch;
+		font-family: Seravek, "Gill Sans Nova", Ubuntu, Calibri, "DejaVu Sans",
+			source-sans-pro, sans-serif;
+	}
+}
+
+@layer components {
+	#readme {
+		display: grid;
+		grid-template-columns: repeat(1, minmax(0, 1fr));
+		gap: var(--size-4);
+
+		@media (min-width: 1024px) {
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+		}
+
+		> :first-child {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+
+			@media (min-width: 1024px) {
+				grid-column: span 2 / span 2;
+			}
+		}
+	}
+
+	#projects {
+		#features {
+			display: flex;
+			gap: var(--size-4);
+
+			* {
+				text-transform: capitalize;
+			}
+		}
+
+		#project-grid {
+			display: grid;
+			grid-template-columns: repeat(1, minmax(0, 1fr));
+			gap: var(--size-4);
+			padding-block: var(--size-4);
+
+			@media (min-width: 540px) {
+				grid-template-columns: repeat(2, minmax(0, 1fr));
+			}
+
+			@media (min-width: 768px) {
+				grid-template-columns: repeat(3, minmax(0, 1fr));
+			}
+
+			> * {
+				/* cards */
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				gap: var(--size-1);
+				border: var(--border);
+				border-radius: var(--border-radius);
+				background-color: var(--muted-background);
+				padding: var(--size-4);
+			}
+
+			:last-child {
+				display: flex;
+				justify-content: space-between;
+				gap: var(--size-4);
+
+				.star-count {
+					display: flex;
+					align-items: center;
+					gap: var(--size-2);
+				}
+			}
+
+			h3 {
+				margin-block: 0 var(--size-1);
+				font-size: var(--font-size-5);
+				line-height: var(--line-height-5);
+				letter-spacing: var(--letter-spacing-5);
+			}
+		}
+	}
+
+	drab-share {
+		display: contents;
+
+		button {
+			margin-block: var(--size-6);
+		}
+	}
+}
