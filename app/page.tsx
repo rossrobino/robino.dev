@@ -1,6 +1,7 @@
 import "@/app/style.css";
 import Projects from "@/lib/components/projects";
 import Readme from "@/lib/components/readme";
+import Share from "@/lib/components/share";
 import ross from "@/public/ross.jpeg";
 import type { Metadata } from "next";
 import Image from "next/image";
@@ -36,6 +37,7 @@ export default async function Page() {
 						<Link href="https://www.linkedin.com/in/rossrobino/">LinkedIn</Link>
 					</li>
 				</ul>
+				<Share />
 			</footer>
 		</>
 	);

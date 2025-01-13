@@ -1,6 +1,5 @@
 "use client";
 
-// import Script from "next/script";
 import { useEffect } from "react";
 
 export default function Share() {
@@ -15,7 +14,7 @@ export default function Share() {
 		<drab-share value="https://robino.dev">
 			<button data-trigger type="button" className="secondary">
 				<span data-content>Share</span>
-				<template data-swap>Copied</template>
+				<div data-swap>Copied</div>
 			</button>
 			{/* @ts-ignore */}
 		</drab-share>
