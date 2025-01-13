@@ -9,6 +9,7 @@
 	},
 	"dependencies": {
 		"@robino/md": "^1.0.2",
+		"@vercel/analytics": "^1.4.1",
 		"drab": "^5.4.2",
 		"next": "^15.2.0-canary.3",
 		"react": "^19.0.0",
