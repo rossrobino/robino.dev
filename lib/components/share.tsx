@@ -4,9 +4,7 @@ import { useEffect } from "react";
 
 export default function Share() {
 	useEffect(() => {
-		if (!customElements?.get("drab-share")) {
-			import("drab/share/define");
-		}
+		import("drab/share/define");
 	}, []);
 
 	return (

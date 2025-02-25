@@ -25,8 +25,8 @@ export async function fetchRepos() {
 			"gpt",
 			"uico",
 			"domco",
-			"papi",
 			"splits",
+			"robino",
 			"plought",
 			"blog",
 		];
@@ -55,7 +55,7 @@ export async function fetchReadme() {
 		// remove h1
 		readme = readme.split("\n").slice(2).join("\n");
 
-		return markdownProcessor.process(readme).html;
+		return (await markdownProcessor.process(readme)).html;
 	} catch (error) {
 		console.error(error);
 
