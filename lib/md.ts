@@ -1,3 +1,3 @@
-import { MarkdownProcessor } from "@robino/md";
+import { Processor } from "@robino/md";
 
-export const markdownProcessor = new MarkdownProcessor();
+export const markdownProcessor = new Processor();
