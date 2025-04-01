@@ -8,21 +8,21 @@
 		"format": "prettier --write ."
 	},
 	"dependencies": {
-		"@robino/md": "^3.0.0",
+		"@robino/md": "^3.2.1",
 		"@vercel/analytics": "^1.5.0",
 		"drab": "^6.1.0",
-		"next": "^15.2.0-canary.74",
-		"react": "^19.0.0",
-		"react-dom": "^19.0.0",
-		"uico": "^0.4.6"
+		"next": "^15.3.0-canary.28",
+		"react": "^19.1.0",
+		"react-dom": "^19.1.0",
+		"uico": "^0.7.0"
 	},
 	"devDependencies": {
-		"@octokit/types": "^13.8.0",
+		"@octokit/types": "^13.10.0",
 		"@robino/prettier": "^1.0.2",
-		"@types/node": "22.13.5",
-		"@types/react": "19.0.10",
+		"@types/node": "22.13.17",
+		"@types/react": "19.0.12",
 		"@types/react-dom": "19.0.4",
-		"typescript": "^5.7.3"
+		"typescript": "^5.8.2"
 	},
 	"prettier": "@robino/prettier"
 }
