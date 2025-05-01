@@ -8,13 +8,11 @@ export default function Share() {
 	}, []);
 
 	return (
-		// @ts-ignore
-		<drab-share value="https://robino.dev">
+		<drab-share url="https://robino.dev">
 			<button data-trigger type="button" className="secondary">
 				<span data-content>Share</span>
 				<div data-swap>Copied</div>
 			</button>
-			{/* @ts-ignore */}
 		</drab-share>
 	);
 }

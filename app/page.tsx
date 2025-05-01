@@ -1,8 +1,8 @@
 import "@/app/style.css";
-import Projects from "@/lib/components/projects";
-import Readme from "@/lib/components/readme";
-import Share from "@/lib/components/share";
 import ross from "@/public/ross.jpeg";
+import Projects from "@/ui/projects";
+import Readme from "@/ui/readme";
+import Share from "@/ui/share";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
