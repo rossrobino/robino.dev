@@ -43,6 +43,7 @@ export default function Cards({ repos }: { repos: ReposData }) {
 							key={feature}
 							disabled={current === feature}
 							onClick={() => sortRepos(feature)}
+							type="button"
 						>
 							{feature.split("_").join(" ")}
 						</button>
