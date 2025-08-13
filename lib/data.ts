@@ -22,20 +22,16 @@ export async function fetchRepos() {
 		const projectNames = [
 			"drab",
 			"typo",
-			"gpt",
+			"ai6",
 			"uico",
 			"domco",
 			"splits",
+			"ovr",
 			"robino",
-			"plought",
 			"blog",
 		];
 
-		const filtered = repos.filter((repo) => {
-			return projectNames.includes(repo.name);
-		});
-
-		return filtered;
+		return repos.filter((repo) => projectNames.includes(repo.name));
 	} catch (error) {
 		console.error(error);
 		return [];
