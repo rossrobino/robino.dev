@@ -11,8 +11,7 @@
 	}
 
 	:root {
-		--base: rgb(75, 76, 100);
-		--light-end: 0.1;
+		--light-start: 1;
 		--accent: var(--base-950);
 	}
 
