@@ -8,11 +8,14 @@ export async function fetchRepos() {
 	"use cache";
 
 	try {
-		const reposRes = await fetch(
-			"https://api.github.com/users/rossrobino/repos",
-		);
+		const [reposRes, ovrRes] = await Promise.all([
+			fetch("https://api.github.com/users/rossrobino/repos").then((r) =>
+				r.json(),
+			),
+			fetch("https://api.github.com/users/ovrjs/repos").then((r) => r.json()),
+		]);
 
-		const repos: ReposData = await reposRes.json();
+		const repos: ReposData = [...reposRes, ...ovrRes];
 
 		// sort by most recent first
 		repos.sort((a, b) => {
