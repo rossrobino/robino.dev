@@ -11,8 +11,7 @@
 	}
 
 	:root {
-		--light-start: 1;
-		--accent: var(--base-950);
+		--base: rgb(81, 95, 128);
 	}
 
 	body {
@@ -30,7 +29,7 @@
 		grid-template-columns: repeat(1, minmax(0, 1fr));
 		gap: var(--size-4);
 
-		@media (min-width: 1024px) {
+		@media (min-width: 768px) {
 			grid-template-columns: repeat(3, minmax(0, 1fr));
 		}
 
@@ -39,7 +38,7 @@
 			flex-direction: column;
 			justify-content: center;
 
-			@media (min-width: 1024px) {
+			@media (min-width: 768px) {
 				grid-column: span 2 / span 2;
 			}
 		}
@@ -99,18 +98,6 @@
 				line-height: var(--line-height-5);
 				letter-spacing: var(--letter-spacing-5);
 			}
-		}
-	}
-
-	drab-share {
-		display: contents;
-
-		[data-swap] {
-			display: none;
-		}
-
-		button {
-			margin-block: var(--size-6);
 		}
 	}
 }

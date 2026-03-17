@@ -40,6 +40,7 @@ export default function Cards({ repos }: { repos: ReposData }) {
 				{features.map((feature) => {
 					return (
 						<button
+							className="ghost"
 							key={feature}
 							disabled={current === feature}
 							onClick={() => sortRepos(feature)}

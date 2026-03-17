@@ -22,7 +22,7 @@ export async function fetchRepos() {
 			return Number(b.stargazers_count) - Number(a.stargazers_count);
 		});
 
-		const projectNames = ["drab", "typo", "uico", "domco", "ovr", "blog"];
+		const projectNames = ["drab", "typo", "uico", "domco", "ovr", "plought"];
 
 		return repos.filter((repo) => projectNames.includes(repo.name));
 	} catch (error) {
