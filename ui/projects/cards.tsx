@@ -1,6 +1,7 @@
 "use client";
 
 import type { ReposData } from "@/lib/data";
+import { clsx } from "clsx";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -22,6 +23,7 @@ export default function Cards({ repos }: { repos: ReposData }) {
 					return Number(b[feature]) - Number(a[feature]);
 				});
 			}
+
 			setCurrent(feature);
 		};
 
@@ -38,11 +40,13 @@ export default function Cards({ repos }: { repos: ReposData }) {
 		<>
 			<div id="features">
 				{features.map((feature) => {
+					const selected = current === feature;
+
 					return (
 						<button
-							className="ghost"
+							className={clsx("ghost", { selected })}
 							key={feature}
-							disabled={current === feature}
+							disabled={selected}
 							onClick={() => sortRepos(feature)}
 							type="button"
 						>

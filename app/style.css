@@ -12,18 +12,28 @@
 
 	:root {
 		--base: rgb(81, 95, 128);
+		--border-radius: 25px;
 	}
 
 	body {
 		margin-inline: auto;
 		padding: var(--size-6);
 		max-width: 105ch;
-		font-family: Seravek, "Gill Sans Nova", Ubuntu, Calibri, "DejaVu Sans",
-			source-sans-pro, sans-serif;
 	}
 }
 
 @layer components {
+	img {
+		corner-shape: squircle;
+		opacity: light-dark(1, 0.9);
+	}
+
+	button {
+		border-radius: 999px;
+		padding-inline: var(--size-3);
+		height: var(--size-6);
+	}
+
 	#readme {
 		display: grid;
 		grid-template-columns: repeat(1, minmax(0, 1fr));
@@ -46,8 +56,25 @@
 
 	#projects {
 		#features {
-			display: flex;
-			gap: var(--size-4);
+			display: inline-flex;
+			gap: var(--size-1);
+			border: var(--border);
+			border-radius: var(--border-radius);
+			background-color: var(--muted-background);
+			padding: var(--size-1);
+
+			> :not(.selected) {
+				opacity: 0.5;
+
+				&:hover {
+					opacity: 0.8;
+				}
+			}
+
+			.selected {
+				opacity: 1;
+				background-color: var(--background);
+			}
 
 			* {
 				text-transform: capitalize;
@@ -71,12 +98,17 @@
 			> * {
 				/* cards */
 				display: flex;
+				corner-shape: squircle;
 				flex-direction: column;
 				justify-content: space-between;
 				gap: var(--size-1);
 				border: var(--border);
 				border-radius: var(--border-radius);
-				background-color: var(--muted-background);
+				background-color: color-mix(
+					in oklab,
+					var(--muted-background) 80%,
+					transparent
+				);
 				padding: var(--size-4);
 			}
 
