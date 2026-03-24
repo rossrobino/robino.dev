@@ -124,6 +124,7 @@
 				flex-direction: column;
 				justify-content: space-between;
 				gap: var(--size-1);
+				transition: scale 0.15s ease-out;
 				box-shadow: var(--shadow);
 				border: var(--border);
 				border-radius: var(--border-radius);
@@ -133,6 +134,18 @@
 					transparent
 				);
 				padding: var(--size-4);
+
+				&:hover {
+					background-color: color-mix(
+						in oklab,
+						var(--muted-background) 70%,
+						transparent
+					);
+				}
+
+				&:has(*:active) {
+					scale: 99%;
+				}
 			}
 
 			:last-child {
