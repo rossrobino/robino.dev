@@ -6,9 +6,10 @@ import Link from "next/link";
 import { useState } from "react";
 
 export default function Cards({ repos }: { repos: ReposData }) {
-	const features = ["stargazers_count", "created_at", "pushed_at"] as const;
+	const features = ["created_at", "stargazers_count", "pushed_at"] as const;
+	const defaultFeature = "created_at";
 
-	let [current, setCurrent] = useState("stargazers_count");
+	let [current, setCurrent] = useState(defaultFeature);
 
 	const sortRepos = (feature: (typeof features)[number]) => {
 		const sort = () => {

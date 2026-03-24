@@ -18,9 +18,11 @@ export async function fetchRepos() {
 		const repos: ReposData = [...reposRes, ...ovrRes];
 
 		// sort by most recent first
-		repos.sort((a, b) => {
-			return Number(b.stargazers_count) - Number(a.stargazers_count);
-		});
+		repos.sort(
+			(a, b) =>
+				new Date(String(b["created_at"])).valueOf() -
+				new Date(String(a["created_at"])).valueOf(),
+		);
 
 		const projectNames = ["drab", "typo", "uico", "domco", "ovr", "plought"];
 
