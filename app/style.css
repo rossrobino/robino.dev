@@ -25,15 +25,15 @@
 		margin-inline: auto;
 		padding: var(--size-6);
 		max-width: 105ch;
-		font-weight: 300;
-	}
-
-	a {
-		font-weight: 400;
+		font-weight: 350;
 	}
 }
 
 @layer components {
+	a {
+		font-weight: 600;
+	}
+
 	img {
 		corner-shape: squircle;
 		opacity: light-dark(1, 0.9);

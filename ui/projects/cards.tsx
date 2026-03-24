@@ -75,13 +75,17 @@ export default function Cards({ repos }: { repos: ReposData }) {
 							}}
 						>
 							<div>
-								<Link href={homepage ? homepage : html_url}>
-									<h3>{name}</h3>
-								</Link>
+								<h3>
+									<Link href={homepage ? homepage : html_url} target="_blank">
+										{name}
+									</Link>
+								</h3>
 								<div>{description}</div>
 							</div>
 							<div>
-								<Link href={html_url}>{full_name}</Link>
+								<Link href={html_url} target="_blank">
+									{full_name}
+								</Link>
 								<div className="star-count">
 									<svg
 										xmlns="http://www.w3.org/2000/svg"
