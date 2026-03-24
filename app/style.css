@@ -2,8 +2,10 @@
 
 @layer base {
 	::view-transition-group(*) {
-		animation-duration: 0.4s;
+		animation-duration: var(--view-transition-duration);
+		animation-timing-function: var(--view-transition-ease);
 	}
+
 	@media (prefers-reduced-motion) {
 		::view-transition-group(*) {
 			animation-duration: 0s;
@@ -13,12 +15,21 @@
 	:root {
 		--base: rgb(81, 95, 128);
 		--border-radius: 25px;
+		--shadow: 0 0.08rem 0.22rem
+			color-mix(in oklab, var(--base-500) 8%, transparent);
+		--view-transition-duration: 0.3s;
+		--view-transition-ease: cubic-bezier(0.34, 1.18, 0.64, 1);
 	}
 
 	body {
 		margin-inline: auto;
 		padding: var(--size-6);
 		max-width: 105ch;
+		font-weight: 300;
+	}
+
+	a {
+		font-weight: 400;
 	}
 }
 
@@ -26,6 +37,7 @@
 	img {
 		corner-shape: squircle;
 		opacity: light-dark(1, 0.9);
+		box-shadow: var(--shadow);
 	}
 
 	button {
@@ -71,9 +83,19 @@
 				}
 			}
 
+			> * {
+				border: 1px solid var(--muted-background);
+			}
+
 			.selected {
 				opacity: 1;
-				background-color: var(--background);
+				box-shadow: var(--shadow);
+				border-color: var(--background);
+				background-color: color-mix(
+					in oklab,
+					var(--background) 60%,
+					transparent
+				);
 			}
 
 			* {
@@ -102,6 +124,7 @@
 				flex-direction: column;
 				justify-content: space-between;
 				gap: var(--size-1);
+				box-shadow: var(--shadow);
 				border: var(--border);
 				border-radius: var(--border-radius);
 				background-color: color-mix(

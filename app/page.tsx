@@ -16,7 +16,11 @@ export default async function Page() {
 			<main>
 				<section id="readme">
 					<Readme />
-					<Image src={ross} alt="An image of Ross in a field." />
+					<Image
+						src={ross}
+						alt="An image of Ross in a field."
+						loading="eager"
+					/>
 				</section>
 				<section id="projects">
 					<Projects />
