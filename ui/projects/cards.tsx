@@ -42,6 +42,8 @@ export default function Cards({ repos }: { repos: ReposData }) {
 			<div id="features">
 				{features.map((feature) => {
 					const selected = current === feature;
+					let text = feature.split("_").at(0);
+					if (text?.startsWith("star")) text = "stars";
 
 					return (
 						<button
@@ -51,7 +53,7 @@ export default function Cards({ repos }: { repos: ReposData }) {
 							onClick={() => sortRepos(feature)}
 							type="button"
 						>
-							{feature.split("_").join(" ")}
+							{text}
 						</button>
 					);
 				})}
