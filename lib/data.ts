@@ -1,11 +1,13 @@
 import { markdownProcessor } from "@/lib/md";
 import type { Endpoints } from "@octokit/types";
+import { cacheLife } from "next/cache";
 
 export type ReposData =
 	Endpoints["GET /users/{username}/repos"]["response"]["data"];
 
 export async function fetchRepos() {
 	"use cache";
+	cacheLife("hours");
 
 	try {
 		const [reposRes, ovrRes] = await Promise.all([
@@ -35,6 +37,7 @@ export async function fetchRepos() {
 
 export async function fetchReadme() {
 	"use cache";
+	cacheLife("hours");
 
 	try {
 		const res = await fetch(
